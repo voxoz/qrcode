@@ -1,4 +1,4 @@
-defmodule WARL.Mixfile do
+defmodule QRCODE.Mixfile do
   use Mix.Project
   def project() do
     [
