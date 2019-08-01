@@ -25,7 +25,7 @@ defmodule QRCODE.Mixfile do
   def application() do
     [
       mod: {:qrcode, []},
-      applications: [:kernel,:stdlib,:crypto,:cowlib,:gun,:jsone,:hkdf,:curve25519,:qrcode,:kvs]
+      applications: [:kernel,:stdlib,:crypto,:cowlib,:gun,:jsone,:hkdf,:curve25519,:kvs]
     ]
 
   end
