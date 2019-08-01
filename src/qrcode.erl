@@ -13,11 +13,18 @@
 % limitations under the License.
 
 -module(qrcode).
+-compile(export_all).
+-behaviour(application).
+-behaviour(supervisor).
+-export([start/2, stop/1, init/1]).
+-export([encode/1, encode/2, decode/1, png_encode/1]).
 
 -include("qrcode.hrl").
 -include("qrcode_params.hrl").
 
--export([encode/1, encode/2, decode/1, png_encode/1]).
+start(_StartType, _StartArgs) -> supervisor:start_link({local, ?MODULE}, ?MODULE, []).
+stop(_State) -> ok.
+init([]) -> {ok, { {one_for_one, 5, 10}, []} }.
 
 %%
 decode(_Bin) ->
